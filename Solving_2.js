@@ -36,4 +36,4 @@ function same(arr1, arr2) {
     return true;
 }
 
-console.log(same([1,2,3,2], [1,9,4,4]));
+console.log(same([1,2,3,2, 4], [1,9,16,4,4]));

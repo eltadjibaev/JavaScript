@@ -57,11 +57,27 @@
   
 // }
 
-function isSubsequence(str1, str2){
-    if(str1.length === 0) { return true; }
-    else if(str2.length === 0) { return false; }
-    if(str1[0] === str2[0]) { return isSubsequence(str1.slice(1), str2.slice(1)); }
-    return isSubsequence(str1, str2.slice(1));
+// function isSubsequence(str1, str2){
+//     if(str1.length === 0) { return true; }
+//     else if(str2.length === 0) { return false; }
+//     if(str1[0] === str2[0]) { return isSubsequence(str1.slice(1), str2.slice(1)); }
+//     return isSubsequence(str1, str2.slice(1));
+// }
+
+// console.log(isSubsequence("abc", "abracadabra"));
+
+function maxSubarraySum(arr, limit) {
+    if (arr.length < limit) { return null; }
+    let sum = 0;
+    for (var i = 0; i < limit; i++) {
+        sum+=arr[i];
+    }
+    let max = sum;
+    for (var i = limit; i < arr.length; i++) {
+        sum = sum - arr[i-limit] + arr[i];
+        max = Math.max(sum, max);
+    }
+    return max;
 }
 
-console.log(isSubsequence("abc", "abracadabra"));
+console.log(maxSubarraySum([100, 200, 300, 400, 500], 2));

@@ -82,24 +82,44 @@
 
 // console.log(maxSubarraySum([100, 200, 300, 400, 500], 2));
 
-function minSubArrayLen(nums, sum){
-    let start = 0;
-    let end = 0;
-    let total = 0;
-    let minLen = Infinity;
+// function minSubArrayLen(nums, sum){
+//     let start = 0;
+//     let end = 0;
+//     let total = 0;
+//     let minLen = Infinity;
     
-    while(start < nums.length){
-        if (total < sum && end < nums.length) {
-            total += nums[end];
-            end++;
-        } else if(total >= sum){
-            minLen = Math.min(minLen, end - start);
-            total -= nums[start];
-            start++;
-        } else { break; }
+//     while(start < nums.length){
+//         if (total < sum && end < nums.length) {
+//             total += nums[end];
+//             end++;
+//         } else if(total >= sum){
+//             minLen = Math.min(minLen, end - start);
+//             total -= nums[start];
+//             start++;
+//         } else { break; }
+//     }
+    
+//     return minLen === Infinity ? 0 : minLen;
+// }
+
+// console.log(minSubArrayLen([2,3,1,2,4,3], 7));
+
+function findLongestSubstring(str) {
+  let longest = 0;
+  let seen = {};
+  let start = 0;
+ 
+  for (let i = 0; i < str.length; i++) {
+    let char = str[i];
+    if (seen[char]) {
+      start = Math.max(start, seen[char]);
     }
-    
-    return minLen === Infinity ? 0 : minLen;
+    // index - beginning of substring + 1 (to include current in count)
+    longest = Math.max(longest, i - start + 1);
+    // store the index of the next char so as to not double count
+    seen[char] = i + 1;
+  }
+  return longest;
 }
 
-console.log(minSubArrayLen([2,3,1,2,4,3], 7));
+console.log(findLongestSubstring('rithmschool'));

@@ -66,18 +66,40 @@
 
 // console.log(isSubsequence("abc", "abracadabra"));
 
-function maxSubarraySum(arr, limit) {
-    if (arr.length < limit) { return null; }
-    let sum = 0;
-    for (var i = 0; i < limit; i++) {
-        sum+=arr[i];
+// function maxSubarraySum(arr, limit) {
+//     if (arr.length < limit) { return null; }
+//     let sum = 0;
+//     for (var i = 0; i < limit; i++) {
+//         sum+=arr[i];
+//     }
+//     let max = sum;
+//     for (var i = limit; i < arr.length; i++) {
+//         sum = sum - arr[i-limit] + arr[i];
+//         max = Math.max(sum, max);
+//     }
+//     return max;
+// }
+
+// console.log(maxSubarraySum([100, 200, 300, 400, 500], 2));
+
+function minSubArrayLen(nums, sum){
+    let start = 0;
+    let end = 0;
+    let total = 0;
+    let minLen = Infinity;
+    
+    while(start < nums.length){
+        if (total < sum && end < nums.length) {
+            total += nums[end];
+            end++;
+        } else if(total >= sum){
+            minLen = Math.min(minLen, end - start);
+            total -= nums[start];
+            start++;
+        } else { break; }
     }
-    let max = sum;
-    for (var i = limit; i < arr.length; i++) {
-        sum = sum - arr[i-limit] + arr[i];
-        max = Math.max(sum, max);
-    }
-    return max;
+    
+    return minLen === Infinity ? 0 : minLen;
 }
 
-console.log(maxSubarraySum([100, 200, 300, 400, 500], 2));
+console.log(minSubArrayLen([2,3,1,2,4,3], 7));

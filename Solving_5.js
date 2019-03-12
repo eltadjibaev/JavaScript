@@ -26,6 +26,7 @@
     
 // }
 
+
 // console.log(areThereDuplicates('a','b','c','a'));
 
 // function areThereDuplicates(...args){

@@ -33,6 +33,9 @@ function productOfArray(arr) {
     return arr[0] * productOfArray(arr.slice(1));
 }
 
+// productOfArray([1,2,3]) // 6
+// productOfArray([1,2,3,10]) // 60
+
 
 //////////RECURSIVE RANGE SOLUTION/////////////
 
@@ -41,6 +44,9 @@ function recursiveRange(x){
    return x + recursiveRange(x-1);
 }
 
+// recursiveRange(6) // 21
+// recursiveRange(10) // 55 
+
 
 //////////FIBONACCI SOLUTION//////////////////
 
@@ -48,3 +54,8 @@ function fib(n){
     if (n <= 2) return 1;
     return fib(n-1) + fib(n-2);
 }
+
+// fib(4) // 3
+// fib(10) // 55
+// fib(28) // 317811
+// fib(35) // 9227465

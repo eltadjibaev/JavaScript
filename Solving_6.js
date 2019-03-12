@@ -1,48 +1,45 @@
-//////////////1.
-// function pow(num1, num2) {
-//     if(num2 === 1) { return num1; }
-//     else if(num2 === 0) { return 0; }
-//     return num1 * pow(num1, num2 - 1);
-// }
 
-// console.log(pow(2, 4));
+///////////////POWER SOLUTION/////////////////
 
-function factorial(num){
-   if(num === 1) { return 1; }
-   return num * factorial(num - 1);
-}
-
-console.log(factorial(1));
-
-//factorial(1) // 1
-console.log(factorial(2)); // 2
-console.log(factorial(4)); // 24
-console.log(factorial(7)); // 5040
-
-POWER SOLUTION
 function power(base, exponent){
     if(exponent === 0) return 1;
     return base * power(base,exponent-1);
 }
-FACTORIAL SOLUTION
+
+
+/////////////FACTORIAL SOLUTION/////////////
+
 function factorial(x){
    if (x < 0 ) return 0;
    if (x <= 1 ) return 1;
    return x * factorial(x-1);
 }
-PRODUCT OF ARRAY SOLUTION
+
+console.log(factorial(2)); // 2
+console.log(factorial(4)); // 24
+console.log(factorial(7)); // 5040
+
+
+//////////PRODUCT OF ARRAY SOLUTION///////////////
+
 function productOfArray(arr) {
     if(arr.length === 0) {
         return 1;
     }
     return arr[0] * productOfArray(arr.slice(1));
 }
-RECURSIVE RANGE SOLUTION
+
+
+//////////RECURSIVE RANGE SOLUTION/////////////
+
 function recursiveRange(x){
    if (x === 0 ) return 0;
    return x + recursiveRange(x-1);
 }
-FIBONACCI SOLUTION
+
+
+//////////FIBONACCI SOLUTION//////////////////
+
 function fib(n){
     if (n <= 2) return 1;
     return fib(n-1) + fib(n-2);

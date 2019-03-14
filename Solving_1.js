@@ -48,3 +48,6 @@
 
 // console.log(charCount('hello'));
 
+// isPalindrome('tacocat') // true
+// isPalindrome('amanaplanacanalpanama') // true
+// isPalindrome('amanaplanacanalpandemonium') // false

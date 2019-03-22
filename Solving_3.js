@@ -1,7 +1,10 @@
+
 // function validAnagram(s, t){
 //   if(s.length !== t.length){
 //       return false;
 //   }
+
+/////////////////////////////////////////////////////////////
   
 //   var dict = {};
 //   for(let i = 0; i < s.length; i++){

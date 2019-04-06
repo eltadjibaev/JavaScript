@@ -1,4 +1,5 @@
 // Primitives
+
 var a = 23;
 var b = a;
 a = 46;

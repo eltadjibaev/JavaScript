@@ -13,13 +13,17 @@ var obj1 = {
     name: 'John',
     age: 26
 };
+
 var obj2 = obj1;
+
 obj1.age = 30;
+
 console.log(obj1.age);
 console.log(obj2.age);
 
 // Functions
 var age = 27;
+
 var obj = {
     name: 'Jonas',
     city: 'Lisbon'

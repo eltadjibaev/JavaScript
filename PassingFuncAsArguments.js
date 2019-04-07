@@ -1,6 +1,7 @@
 
 // Passing functions as arguments
 
+
 var years = [1990, 1965, 1937, 2005, 1998];
 
 function arrayCalc(arr, fn) {
@@ -11,13 +12,16 @@ function arrayCalc(arr, fn) {
     return arrRes;
 }
 
+
 function calculateAge(el) {
     return 2016 - el;
 }
 
+
 function isFullAge(el) {
     return el >= 18;
 }
+
 
 function maxHeartRate(el) {
     if (el >= 18 && el <= 81) {

@@ -1,4 +1,4 @@
-// Lecture: let and const
+// let and const
 
 /*
 // ES5

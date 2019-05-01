@@ -1,4 +1,4 @@
-//Asynchronous JavaScript
+//Asynchronous JavaScript 1
 
 const second = () => {
      setTimeout(() => {
@@ -13,4 +13,3 @@ const second = () => {
      }
 
 first();
-
